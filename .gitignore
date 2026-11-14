@@ -1,0 +1,19 @@
+# Claude Code config and instructions — local only, not version controlled.
+# Adding a path here does not untrack a file that is already committed; use
+# `git rm --cached` for that. Only `git check-ignore -v` proves a rule fires.
+.claude/
+CLAUDE.md
+
+# The rule stays so re-creating this file cannot silently publish it; it is
+# expected to match nothing.
+1CLAUDE.md
+
+# Project notes and the portable memory copy — local only. Trailing slash, so
+# nothing inside can be un-ignored by a later negation; that is intended. To
+# publish one file out it would have to become `docs/*` plus `!docs/<file>`.
+docs/
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store

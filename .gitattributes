@@ -1,0 +1,31 @@
+# Normalize line endings so they don't depend on each machine's git config.
+# Text files are stored LF in the repo; git converts on checkout per platform.
+* text=auto
+
+# Always LF in the working copy — these break or misbehave with CRLF.
+*.sh    text eol=lf
+*.md    text eol=lf
+
+# Dotfiles git itself parses. Without an explicit rule these fall to
+# `text=auto`, which rewrites them CRLF on the next checkout on Windows.
+.gitignore      text eol=lf
+.gitattributes  text eol=lf
+*.json  text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+
+# Always CRLF — Windows shells require it.
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+
+# Binary — never touch these.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.pdf   binary
+*.woff  binary
+*.woff2 binary
